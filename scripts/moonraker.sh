@@ -162,7 +162,7 @@ function install_moonraker_dependencies() {
 
   ### Install required packages
   status_msg "Installing required packages..."
-  if ! sudo dnf install --yes "${packages[@]}"; then
+  if ! sudo dnf install -y "${packages[@]}"; then
     log_error "failure while installing required moonraker packages"
     error_msg "Installing required packages failed!"
     exit 1

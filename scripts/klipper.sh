@@ -312,7 +312,7 @@ function install_klipper_packages() {
 
   ### Install required packages
   status_msg "Installing required packages..."
-  if ! sudo dnf install --yes "${packages[@]}"; then
+  if ! sudo dnf install -y "${packages[@]}"; then
     log_error "failure while installing required klipper packages"
     error_msg "Installing required packages failed!"
     exit 1
