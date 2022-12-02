@@ -154,7 +154,7 @@ function install_moonraker_dependencies() {
 
   ### Update system package info
   status_msg "Updating package lists..."
-  if ! sudo apt-get update --allow-releaseinfo-change; then
+  if ! sudo dnf update; then
     log_error "failure while updating package lists"
     error_msg "Updating package lists failed!"
     exit 1
@@ -162,7 +162,7 @@ function install_moonraker_dependencies() {
 
   ### Install required packages
   status_msg "Installing required packages..."
-  if ! sudo apt-get install --yes "${packages[@]}"; then
+  if ! sudo dnf install --yes "${packages[@]}"; then
     log_error "failure while installing required moonraker packages"
     error_msg "Installing required packages failed!"
     exit 1
